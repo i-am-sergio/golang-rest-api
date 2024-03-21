@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/i-am-sergio/golang-rest-api/controllers"
+	"github.com/i-am-sergio/golang-rest-api/db"
 	"github.com/labstack/echo/v4"
 )
 
@@ -16,6 +17,8 @@ func concat(strings ...string) string {
 }
 
 func main() {
+
+	db.DBConnection()
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
