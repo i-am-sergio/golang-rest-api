@@ -5,6 +5,7 @@ import (
 
 	"github.com/i-am-sergio/golang-rest-api/controllers"
 	"github.com/i-am-sergio/golang-rest-api/db"
+	"github.com/i-am-sergio/golang-rest-api/models"
 	"github.com/labstack/echo/v4"
 )
 
@@ -19,6 +20,8 @@ func concat(strings ...string) string {
 func main() {
 
 	db.DBConnection()
+	db.DB.AutoMigrate(&models.Task{})
+	db.DB.AutoMigrate(&models.User{})
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {

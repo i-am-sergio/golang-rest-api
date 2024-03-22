@@ -1,13 +1,16 @@
 package models
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type User struct {
 	gorm.Model
 
-	FirstName string `gorm:"not null"`
-	LastName  string `gorm:"not null"`
-	Email     string `gorm:"uniqueIndex;not null"`
-	Password  string
-	Tasks     []Task
+	ID        uint   `gorm:"primaryKey;autoIncrement;not null;unique" json:"id"`
+	FirstName string `gorm:"not null" json:"first_name" validate:"required"`
+	LastName  string `gorm:"not null" json:"last_name" validate:"required"`
+	Email     string `gorm:"not null" json:"email" validate:"required,email"`
+	Password  string `gorm:"not null" json:"password" validate:"required"`
+	Tasks     []Task `json:"tasks"`
 }
