@@ -39,7 +39,7 @@ func main() {
 	routeUser := "/users"
 
 	e.GET(concat(routeUser), controllers.GetUsers)
-	e.GET(concat(routeUser, "/:id"), controllers.GetUser)
+	e.GET(concat(routeUser, "/:id"), controllers.GetUserById)
 	e.POST(concat(routeUser), controllers.SaveUser)
 	e.PUT(concat(routeUser, "/:id"), controllers.UpdateUser)
 	e.DELETE(concat(routeUser, "/:id"), controllers.DeleteUser)

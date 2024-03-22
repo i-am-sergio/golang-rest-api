@@ -16,7 +16,7 @@ func GetUsers(c echo.Context) error {
 }
 
 // Handler para la ruta "/users/:id"
-func GetUser(c echo.Context) error {
+func GetUserById(c echo.Context) error {
 	idStr := c.Param("id")
 	id, err := strconv.ParseUint(idStr, 10, 64)
 	if err != nil {
