@@ -1,3 +1,4 @@
 # binaries
 golang-rest-api
 executable
+*.exe
