@@ -32,9 +32,15 @@ Each endpoint accepts and returns data in JSON format.
 
 1. Clone the repository
 2. Run go application:
+    - linux
     ```
     go build -o app && ./app
     ```
+    - windows
+    ```
+    go build -o app.exe; ./app.exe
+    ```
+
 3. The application will be available at `http://localhost:5000`.
 
 Enjoy using the API!
