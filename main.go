@@ -7,6 +7,7 @@ import (
 	"github.com/i-am-sergio/golang-rest-api/models"
 	"github.com/i-am-sergio/golang-rest-api/routes"
 	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
@@ -15,6 +16,7 @@ func main() {
 	db.DB.AutoMigrate(&models.User{})
 
 	e := echo.New()
+	e.Use(middleware.CORS())
 
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!")
