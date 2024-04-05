@@ -10,4 +10,7 @@ RUN go build -o executable
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/executable /app/executable
+
+EXPOSE 5000
+
 CMD ["./executable"]

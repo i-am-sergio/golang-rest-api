@@ -8,7 +8,7 @@ import (
 var DB *gorm.DB
 
 func DBConnection() {
-	DSN := "root:tGyNwczLSFdttnEYYicqcFBUDZdEOaql@tcp(monorail.proxy.rlwy.net:30686)/railway?charset=utf8mb4&parseTime=True&loc=Local"
+	DSN := "root:uYelvUhFseXvYXWSYyjsbdXaoKavTgKH@tcp(roundhouse.proxy.rlwy.net:42180)/railway?charset=utf8mb4&parseTime=True&loc=Local"
 
 	var error error
 	DB, error = gorm.Open(mysql.Open(DSN), &gorm.Config{})
